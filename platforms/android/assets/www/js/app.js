@@ -27,47 +27,65 @@
     return undefined;
   }
 
-  app.controller('StravaController', function($scope, $http) {
+
+  function persist() {
+      window.localStorage['routes'] = angular.toJson(routes);
+  }
+
+  app.controller('StravaController', function($scope, $http, $q) {
 
      
-    function loadTrainnings(callback) {
-
+    function loadTrainnings() {
+      var q = $q.defer();
       $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=657156f6161cfe69143818fb3ebf645e676d317d &callback=JSON_CALLBACK').success(function (data) {
-            
+            alert('BIEN');
             for (var i = data.length - 1; i >= 0; i--) {
               data[i].distance = (Math.round((data[i].distance/1000)*10)/10).toFixed(1);
               data[i].elevation_gain = data[i].elevation_gain.toFixed(0);
             };
-
-            callback(data);
+            q.resolve(data);
+       }).error(function(){
+            q.reject();
+           
        });
+       return q.promise;
     };
 
 
-    loadTrainnings(function(olderTrainnings) {
-        $scope.routes = olderTrainnings;
+    loadTrainnings().then(function(data){
+        $scope.routes = data;
         routes = $scope.routes;
+        persist();
+    }).catch(function(){
+        $scope.routes = angular.fromJson(window.localStorage['routes'] || '[]');
     });
 
 
     $scope.loadOlderTrainnings = function() {
       
-      loadTrainnings(function(olderTrainnings) {
-        $scope.routes = olderTrainnings;
-  
+
+
+      loadTrainnings().then(function(data){
+        $scope.routes = data;
+        routes = $scope.routes;
+        persist();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      }).catch(function(){
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
-      routes = $scope.routes;
     };
   
     $scope.loadNewerTrainnings = function() {
 
-      loadTrainnings(function(newerTrainnings) {
-        $scope.routes= newerTrainnings;
-        
+      loadTrainnings().then(function(data){
+        $scope.routes = olderTrainnings;
+        routes = $scope.routes;
+        persist();
+        $scope.$broadcast('scroll.refreshComplete');
+      }).catch(function(){
+        alert('No se pueden actualizar los entrenos');
         $scope.$broadcast('scroll.refreshComplete');
       });
-      routes = $scope.routes;
     };
 
 
@@ -157,7 +175,7 @@
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             if($scope.route.id == imageData.text){
                 alert('Entreno registrado!');
-                
+                $scope.route.assist = true;
             }else{
                 alert('Entreno no encontrado');
             }
