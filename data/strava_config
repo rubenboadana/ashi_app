@@ -1,0 +1,7 @@
+
+{
+    "access_token"    :"657156f6161cfe69143818fb3ebf645e676d317d "
+    , "client_id"     :"10370"
+    , "client_secret" :"ab9cb0b7f3e4b4bb8159d3b64571e8c9631265bb"
+    , "redirect_uri"  :"Your apps Authorization Redirection URI (Required for oauth)"
+}

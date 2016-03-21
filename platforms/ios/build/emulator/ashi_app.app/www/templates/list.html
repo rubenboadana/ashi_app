@@ -1,0 +1,22 @@
+<ion-view title="<h1 class='title'><img id='logo-header' src='img/ashi-sports-logo-1437236839.jpg'/></h1>">
+	<ion-content ng-controller="StravaController">
+        <ion-refresher pulling-text="Cargando..."
+          on-refresh="loadNewerTrainnings()">
+        </ion-refresher>
+        <div class="list">
+          <!-- ng-click="openLink({{route.id}})"  -->
+          <a class="item item-thumbnail-left" href="#/map/{{route.id}}" ng-repeat="route in routes track by route.id">
+            <img src="img/strava.png">
+            <h2 class="story-title">{{route.name}}</h2>
+            <p>{{route.description}}</p>
+            <div>
+            	<p style="float: left">{{route.distance}} km &nbsp; &nbsp;</p>
+            	<p style="float: left">{{route.elevation_gain}} m Desnivel positivo</p>
+            </div>
+            <br/>
+            <br/>
+            <p><span am-time-ago="route.timestamp" am-preprocess="unix"></span></p>
+          </a>
+        </div>
+      </ion-content>
+</ion-view>

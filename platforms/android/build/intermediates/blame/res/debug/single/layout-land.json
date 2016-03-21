@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/layout-land/encode.xml",
+        "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/layout-land/encode.xml"
+    },
+    {
+        "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/layout-land/share.xml",
+        "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/layout-land/share.xml"
+    }
+]

@@ -1,0 +1,33 @@
+h2.story-title {
+	white-space: normal;
+	height: 3.6em;
+}
+#logo-header{
+	width: 123px;
+	height: 43px;
+	margin-top: 2%;
+	margin-bottom: 1%;
+	float: right;
+
+}
+.title{
+	height: 70px !important;
+	text-align: center;
+
+}
+.bar{
+	height: 70px !important;
+}
+.has-header {
+    top: 70px !important;
+}
+.scroll {
+    height: 100%;
+}
+ 
+#map {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 2%;
+}

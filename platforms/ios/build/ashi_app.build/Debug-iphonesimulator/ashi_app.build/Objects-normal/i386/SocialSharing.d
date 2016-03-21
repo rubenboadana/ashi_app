@@ -1,0 +1,25 @@
+dependencies: \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/ashi_app/Plugins/cordova-plugin-x-socialsharing/SocialSharing.m \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/ashi_app/Plugins/cordova-plugin-x-socialsharing/SocialSharing.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDV.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVAvailabilityDeprecated.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVViewController.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVDebug.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVTimer.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/build/emulator/include/Cordova/CDVJSON.h \
+  /Users/Ruben/Applications/Ionic/ashi_app/platforms/ios/ashi_app/Plugins/cordova-plugin-x-socialsharing/NSString+URLEncoding.h

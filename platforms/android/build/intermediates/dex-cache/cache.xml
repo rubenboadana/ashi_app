@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/libs/com.google.zxing.client.android.captureactivity.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="daca75b7de34e1ca229682f2cd54b54e1c324be6">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.google.zxing.client.android.captureactivity_f201f55ac52794811af2446940fbbd9316067e4a.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d1b2942c7b53d5d9610d27bd7941e97e36f15fad">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_08aa2386e123678c250563d52b9551dbeef7be24.jar" />
+    </item>
+
+</items>
