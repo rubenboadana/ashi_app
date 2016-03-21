@@ -17,6 +17,8 @@
   });
 
   var routes;
+  var trainings_done = angular.fromJson(window.localStorage['done'] || '[]');
+
   function getRoute(routeId){
     for (var i = routes.length - 1; i >= 0; i--) {
       if(routes[i].id == routeId){
@@ -29,6 +31,7 @@
 
   function persist() {
       window.localStorage['routes'] = angular.toJson(routes);
+      window.localStorage['done'] = angular.toJson(trainings_done);
   }
 
   app.controller('StravaController', function($scope, $http, $q) {
@@ -59,7 +62,13 @@
         routes = $scope.routes;
     });
 
-
+    $scope.isDone = function(routeId){
+      if(trainings_done.indexOf(routeId) < 0){
+        return false;
+      }else{
+        return true;
+      }
+    };
     $scope.loadOlderTrainnings = function() {
       
 
@@ -70,6 +79,7 @@
         persist();
         $scope.$broadcast('scroll.infiniteScrollComplete');
       }).catch(function(){
+
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
     };
@@ -77,7 +87,7 @@
     $scope.loadNewerTrainnings = function() {
 
       loadTrainnings().then(function(data){
-        $scope.routes = olderTrainnings;
+        $scope.routes = data;
         routes = $scope.routes;
         persist();
         $scope.$broadcast('scroll.refreshComplete');
@@ -174,7 +184,8 @@
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             if($scope.route.id == imageData.text){
                 alert('Entreno registrado!');
-
+                trainings_done.push($scope.route.id);
+                persist();
             }else{
                 alert('Entreno no encontrado');
             }
