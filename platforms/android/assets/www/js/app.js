@@ -17,7 +17,6 @@
   });
 
   var routes;
-
   function getRoute(routeId){
     for (var i = routes.length - 1; i >= 0; i--) {
       if(routes[i].id == routeId){
@@ -38,7 +37,6 @@
     function loadTrainnings() {
       var q = $q.defer();
       $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=657156f6161cfe69143818fb3ebf645e676d317d &callback=JSON_CALLBACK').success(function (data) {
-            alert('BIEN');
             for (var i = data.length - 1; i >= 0; i--) {
               data[i].distance = (Math.round((data[i].distance/1000)*10)/10).toFixed(1);
               data[i].elevation_gain = data[i].elevation_gain.toFixed(0);
@@ -58,6 +56,7 @@
         persist();
     }).catch(function(){
         $scope.routes = angular.fromJson(window.localStorage['routes'] || '[]');
+        routes = $scope.routes;
     });
 
 
@@ -175,7 +174,7 @@
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             if($scope.route.id == imageData.text){
                 alert('Entreno registrado!');
-                $scope.route.assist = true;
+
             }else{
                 alert('Entreno no encontrado');
             }

@@ -17,7 +17,6 @@
   });
 
   var routes;
-
   function getRoute(routeId){
     for (var i = routes.length - 1; i >= 0; i--) {
       if(routes[i].id == routeId){
@@ -57,6 +56,7 @@
         persist();
     }).catch(function(){
         $scope.routes = angular.fromJson(window.localStorage['routes'] || '[]');
+        routes = $scope.routes;
     });
 
 
@@ -174,7 +174,7 @@
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             if($scope.route.id == imageData.text){
                 alert('Entreno registrado!');
-                $scope.route.assist = true;
+
             }else{
                 alert('Entreno no encontrado');
             }
