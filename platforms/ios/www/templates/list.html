@@ -6,7 +6,8 @@
         <div class="list">
           <!-- ng-click="openLink({{route.id}})"  -->
           <a class="item item-thumbnail-left" href="#/map/{{route.id}}" ng-repeat="route in routes track by route.id">
-            <img src="img/strava.png">
+            <img ng-show="isDone({{route.id}})" src="img/strava.png">
+            <!--<img src="img/strava.png">-->
             <h2 class="story-title">{{route.name}}</h2>
             <p>{{route.description}}</p>
             <div>

@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('myashi', ['ionic','angularMoment','ngCordova']);
+  var app = angular.module('myashi', ['ionic','ionic.service.core','angularMoment','ngCordova']);
 
   app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -17,6 +17,7 @@
   });
 
   var routes;
+  var trainings_done = angular.fromJson(window.localStorage['done'] || '[]');
 
   function getRoute(routeId){
     for (var i = routes.length - 1; i >= 0; i--) {
@@ -27,47 +28,73 @@
     return undefined;
   }
 
-  app.controller('StravaController', function($scope, $http) {
+
+  function persist() {
+      window.localStorage['routes'] = angular.toJson(routes);
+      window.localStorage['done'] = angular.toJson(trainings_done);
+  }
+
+  app.controller('StravaController', function($scope, $http, $q) {
 
      
-    function loadTrainnings(callback) {
-
+    function loadTrainnings() {
+      var q = $q.defer();
       $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=657156f6161cfe69143818fb3ebf645e676d317d &callback=JSON_CALLBACK').success(function (data) {
-            
             for (var i = data.length - 1; i >= 0; i--) {
               data[i].distance = (Math.round((data[i].distance/1000)*10)/10).toFixed(1);
               data[i].elevation_gain = data[i].elevation_gain.toFixed(0);
             };
-
-            callback(data);
+            q.resolve(data);
+       }).error(function(){
+            q.reject();
+           
        });
+       return q.promise;
     };
 
 
-    loadTrainnings(function(olderTrainnings) {
-        $scope.routes = olderTrainnings;
+    loadTrainnings().then(function(data){
+        $scope.routes = data;
+        routes = $scope.routes;
+        persist();
+    }).catch(function(){
+        $scope.routes = angular.fromJson(window.localStorage['routes'] || '[]');
         routes = $scope.routes;
     });
 
-
+    $scope.isDone = function(routeId){
+      if(trainings_done.indexOf(routeId) < 0){
+        return false;
+      }else{
+        return true;
+      }
+    };
     $scope.loadOlderTrainnings = function() {
       
-      loadTrainnings(function(olderTrainnings) {
-        $scope.routes = olderTrainnings;
-  
+
+
+      loadTrainnings().then(function(data){
+        $scope.routes = data;
+        routes = $scope.routes;
+        persist();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      }).catch(function(){
+
         $scope.$broadcast('scroll.infiniteScrollComplete');
       });
-      routes = $scope.routes;
     };
   
     $scope.loadNewerTrainnings = function() {
 
-      loadTrainnings(function(newerTrainnings) {
-        $scope.routes= newerTrainnings;
-        
+      loadTrainnings().then(function(data){
+        $scope.routes = data;
+        routes = $scope.routes;
+        persist();
+        $scope.$broadcast('scroll.refreshComplete');
+      }).catch(function(){
+        alert('No se pueden actualizar los entrenos');
         $scope.$broadcast('scroll.refreshComplete');
       });
-      routes = $scope.routes;
     };
 
 
@@ -75,7 +102,7 @@
 
   });
 
-  app.controller('MapsController', function($scope, $state,$ionicLoading,$compile,$cordovaSocialSharing) {
+  app.controller('MapsController', function($scope, $state,$ionicLoading,$compile,$cordovaSocialSharing,$cordovaBarcodeScanner) {
     $scope.route = getRoute($state.params.routeId);
       function initialize() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
@@ -152,12 +179,51 @@
           // An error occurred. Show a message to the user
         });
       }
+
+      $scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            if($scope.route.id == imageData.text){
+                alert('Entreno registrado!');
+                trainings_done.push($scope.route.id);
+                persist();
+            }else{
+                alert('Entreno no encontrado');
+            }
+            
+            
+        });
+      };
+
       initialize();
   });
   
   
   app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
+
+
+      var push = new Ionic.Push({
+"debug":false,
+"onNotification": function(notification){
+alert(notification.text);
+},
+"pluginConfig":{
+"ios":{
+"sound":true
+},
+"android":{
+"forceShow":true,
+"sound":true
+}
+}
+});
+push.register(function(token){
+alert("Device token:"+token);
+push.saveToken(token);
+});
+
+
+
       if(window.cordova && window.cordova.plugins.Keyboard) {
    
        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);

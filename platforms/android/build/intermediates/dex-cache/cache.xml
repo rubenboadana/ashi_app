@@ -2,6 +2,20 @@
 <items version="2" >
 
     <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v13/23.2.0/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="58d0010cb4373696cfdc5894c4b23649af58ed18">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.2.0_5199a4b714bcaf714044b5d6f13be68b0eda4967.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-8.4.0_44b350d6845e2c1537ef9b94aa632ae1f1fa14ce.jar" />
+    </item>
+    <item
         jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/libs/com.google.zxing.client.android.captureactivity.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -14,6 +28,55 @@
         revision="23.0.2"
         sha1="d1b2942c7b53d5d9610d27bd7941e97e36f15fad">
         <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_08aa2386e123678c250563d52b9551dbeef7be24.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.2.0_8b8cd695298b5f08dcbabef35b9aa4aa1f984f79.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-measurement-8.4.0_6d5eb844f008310ee9560837b078fd722d5f24c0.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v13/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f3a3189a228a65d03b3ea92a1b58a2b44bc7366e">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v13-23.2.0_8da61e32c2cf15fd5425036559e3285fb2b0829b.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-23.2.0_11db5f61dc589857a304a3409ff48c812b0ff262.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.4.0_ef5dc1ff81b7cfaa4f6a0c64c6a92a8abeaca4f7.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_36814d2d88247746fcddf3e629a4f6e7c4529c63.jar" />
+    </item>
+    <item
+        jar="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.0_d9301f78477b8f4088c9e739d7e9c349135cf063.jar" />
     </item>
 
 </items>

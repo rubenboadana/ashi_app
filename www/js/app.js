@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('myashi', ['ionic','angularMoment','ngCordova']);
+  var app = angular.module('myashi', ['ionic','ionic.service.core','angularMoment','ngCordova']);
 
   app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -200,6 +200,30 @@
   
   app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
+
+
+      var push = new Ionic.Push({
+          "debug":false,
+          "onNotification": function(notification){
+            alert(notification.text);
+          },
+          "pluginConfig":{
+            "ios":{
+              "sound":true
+            },
+            "android":{
+              "forceShow":true,
+              "sound":true
+            }
+          }
+      });
+      push.register(function(token){
+        //alert("Device token:"+token);
+        push.saveToken(token);
+      });
+
+
+
       if(window.cordova && window.cordova.plugins.Keyboard) {
    
        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
