@@ -34,7 +34,7 @@
       window.localStorage['done'] = angular.toJson(trainings_done);
   }
 
-  app.controller('StravaController', function($scope, $http, $q) {
+  app.controller('StravaController', function($scope, $http, $q, $cordovaBarcodeScanner) {
 
      
     function loadTrainnings() {
@@ -52,6 +52,20 @@
        return q.promise;
     };
 
+
+    $scope.scanBarcode = function(routeId) {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            if(routeId == imageData.text){
+                alert('Entreno registrado!');
+                trainings_done.push(routeId);
+                persist();
+            }else{
+                alert('Entreno no encontrado');
+            }
+            
+            
+        });
+    };
 
     loadTrainnings().then(function(data){
         $scope.routes = data;
@@ -102,7 +116,7 @@
 
   });
 
-  app.controller('MapsController', function($scope, $state,$ionicLoading,$compile,$cordovaSocialSharing,$cordovaBarcodeScanner) {
+  app.controller('MapsController', function($scope, $state,$ionicLoading,$compile,$cordovaSocialSharing) {
     $scope.route = getRoute($state.params.routeId);
       function initialize() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
@@ -180,19 +194,7 @@
         });
       }
 
-      $scope.scanBarcode = function() {
-        $cordovaBarcodeScanner.scan().then(function(imageData) {
-            if($scope.route.id == imageData.text){
-                alert('Entreno registrado!');
-                trainings_done.push($scope.route.id);
-                persist();
-            }else{
-                alert('Entreno no encontrado');
-            }
-            
-            
-        });
-      };
+      
 
       initialize();
   });
@@ -203,24 +205,24 @@
 
 
       var push = new Ionic.Push({
-"debug":false,
-"onNotification": function(notification){
-alert(notification.text);
-},
-"pluginConfig":{
-"ios":{
-"sound":true
-},
-"android":{
-"forceShow":true,
-"sound":true
-}
-}
-});
-push.register(function(token){
-alert("Device token:"+token);
-push.saveToken(token);
-});
+          "debug":false,
+          "onNotification": function(notification){
+            alert(notification.text);
+          },
+          "pluginConfig":{
+            "ios":{
+              "sound":true
+            },
+            "android":{
+              "forceShow":true,
+              "sound":true
+            }
+          }
+      });
+      push.register(function(token){
+        //alert("Device token:"+token);
+        push.saveToken(token);
+      });
 
 
 
