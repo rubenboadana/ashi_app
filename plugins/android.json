@@ -40,7 +40,14 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "690382838094",
             "PACKAGE_NAME": "com.ionicframework.ashiapp253617"
+        },
+        "cordova-instagram-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.ashiapp253617"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.ionicframework.ashiapp253617"
+        }
+    }
 }

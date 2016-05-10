@@ -3,11 +3,10 @@
         <ion-refresher pulling-text="Cargando..."
           on-refresh="loadNewerTrainnings()">
         </ion-refresher>
-        <div class="list">
+        <ion-list>
           <!-- ng-click="openLink({{route.id}})"  -->
-          <a class="item item-thumbnail-left" href="#/map/{{route.id}}" ng-repeat="route in routes track by route.id">
-            <img ng-show="isDone({{route.id}})" src="img/strava.png">
-            <!--<img src="img/strava.png">-->
+          <ion-item class="item item-thumbnail-left" href="#/map/{{route.id}}" ng-repeat="route in routes track by route.id">
+            <img src="{{route.thumbnail}}">
             <h2 class="story-title">{{route.name}}</h2>
             <p>{{route.description}}</p>
             <div>
@@ -17,7 +16,8 @@
             <br/>
             <br/>
             <p><span am-time-ago="route.timestamp" am-preprocess="unix"></span></p>
-          </a>
-        </div>
+            <ion-option-button class="button-assertive icon ion-qr-scanner" ng-click="scanBarcode(route.id)"></ion-option-button>
+          </ion-item>
+        </ion-list>
       </ion-content>
 </ion-view>

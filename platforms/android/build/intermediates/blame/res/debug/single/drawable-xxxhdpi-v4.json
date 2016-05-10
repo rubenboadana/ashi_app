@@ -2,5 +2,9 @@
     {
         "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/icon.png",
         "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/drawable-xxxhdpi/icon.png"
+    },
+    {
+        "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/icon_notification.png",
+        "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/drawable-xxxhdpi/icon_notification.png"
     }
 ]

@@ -74,6 +74,20 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
+    },
+    {
+        "file": "plugins/com.verso.cordova.clipboard/www/clipboard.js",
+        "id": "com.verso.cordova.clipboard.Clipboard",
+        "clobbers": [
+            "cordova.plugins.clipboard"
+        ]
+    },
+    {
+        "file": "plugins/cordova-instagram-plugin/www/CDVInstagramPlugin.js",
+        "id": "cordova-instagram-plugin.InstagramPlugin",
+        "clobbers": [
+            "Instagram"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -89,7 +103,9 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.2.1",
     "cordova-plugin-x-socialsharing": "5.0.11",
     "phonegap-plugin-barcodescanner": "4.0.1",
-    "phonegap-plugin-push": "1.6.1"
+    "phonegap-plugin-push": "1.6.1",
+    "com.verso.cordova.clipboard": "0.1.0",
+    "cordova-instagram-plugin": "0.5.3"
 };
 // BOTTOM OF METADATA
 });

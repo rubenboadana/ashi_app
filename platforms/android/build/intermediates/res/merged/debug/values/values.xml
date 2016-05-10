@@ -73,7 +73,7 @@
     <item name="return_scan_result" type="id"/>
     <integer name="google_play_services_version">8487000</integer>
     <string name="activity_name">@string/launcher_name</string>
-    <string name="app_name">ashi_app</string>
+    <string name="app_name">Ashirunnity</string>
     <string name="app_picker_name">Applications</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>

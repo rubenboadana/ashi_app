@@ -56,6 +56,10 @@
         "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-hdpi/common_plus_signin_btn_text_dark_focused.9.png"
     },
     {
+        "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/drawable-hdpi-v4/icon_notification.png",
+        "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/drawable-hdpi/icon_notification.png"
+    },
+    {
         "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/drawable-hdpi-v4/common_google_signin_btn_text_light_pressed.9.png",
         "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-hdpi/common_google_signin_btn_text_light_pressed.9.png"
     },

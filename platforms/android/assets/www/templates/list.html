@@ -6,8 +6,7 @@
         <ion-list>
           <!-- ng-click="openLink({{route.id}})"  -->
           <ion-item class="item item-thumbnail-left" href="#/map/{{route.id}}" ng-repeat="route in routes track by route.id">
-            <img ng-show="isDone({{route.id}})" src="img/strava.png">
-            <!--<img src="img/strava.png">-->
+            <img src="{{route.thumbnail}}">
             <h2 class="story-title">{{route.name}}</h2>
             <p>{{route.description}}</p>
             <div>

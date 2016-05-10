@@ -40,6 +40,10 @@
         "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/drawable-xxhdpi/ic_action_next_item.png"
     },
     {
+        "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/icon_notification.png",
+        "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/res/drawable-xxhdpi/icon_notification.png"
+    },
+    {
         "merged": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_focused.9.png",
         "source": "/Users/Ruben/Applications/Ionic/ashi_app/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xxhdpi/common_google_signin_btn_text_dark_focused.9.png"
     },

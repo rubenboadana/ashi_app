@@ -85,10 +85,11 @@ int drawable ic_action_next_item 0x7f02002a
 int drawable ic_action_previous_item 0x7f02002b
 int drawable ic_action_remove 0x7f02002c
 int drawable icon 0x7f02002d
-int drawable launcher_icon 0x7f02002e
-int drawable screen 0x7f02002f
-int drawable share_via_barcode 0x7f020030
-int drawable shopper_icon 0x7f020031
+int drawable icon_notification 0x7f02002e
+int drawable launcher_icon 0x7f02002f
+int drawable screen 0x7f020030
+int drawable share_via_barcode 0x7f020031
+int drawable shopper_icon 0x7f020032
 int id adjust_height 0x7f0a0007
 int id adjust_width 0x7f0a0008
 int id auto 0x7f0a000d

@@ -30,6 +30,11 @@ gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
 });
 
+gulp.task('icon_notification', function() {
+    gulp.src('./resources/android/icon_notification/**')
+        .pipe(gulp.dest('./platforms/android/res'));
+    });
+
 gulp.task('install', ['git-check'], function() {
   return bower.commands.install()
     .on('log', function(data) {
@@ -37,7 +42,7 @@ gulp.task('install', ['git-check'], function() {
     });
 });
 
-gulp.task('git-check', function(done) {
+gulp.task('git-check', function(donde) {
   if (!sh.which('git')) {
     console.log(
       '  ' + gutil.colors.red('Git is not installed.'),

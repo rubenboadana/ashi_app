@@ -105,6 +105,22 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.barcodeScanner"
         ]
+    },
+    {
+        "file": "plugins/com.verso.cordova.clipboard/www/clipboard.js",
+        "id": "com.verso.cordova.clipboard.Clipboard",
+        "pluginId": "com.verso.cordova.clipboard",
+        "clobbers": [
+            "cordova.plugins.clipboard"
+        ]
+    },
+    {
+        "file": "plugins/cordova-instagram-plugin/www/CDVInstagramPlugin.js",
+        "id": "cordova-instagram-plugin.InstagramPlugin",
+        "pluginId": "cordova-instagram-plugin",
+        "clobbers": [
+            "Instagram"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -119,7 +135,9 @@ module.exports.metadata =
     "ionic-plugin-keyboard": "1.0.8",
     "cordova-plugin-inappbrowser": "1.2.1",
     "cordova-plugin-x-socialsharing": "5.0.11",
-    "phonegap-plugin-barcodescanner": "4.0.1"
+    "phonegap-plugin-barcodescanner": "4.0.1",
+    "com.verso.cordova.clipboard": "0.1.0",
+    "cordova-instagram-plugin": "0.5.3"
 }
 // BOTTOM OF METADATA
 });

@@ -90,5 +90,23 @@
         "variables": {
             "SENDER_ID": "608300383053"
         }
+    },
+    "cordova-instagram-plugin": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vstirbu/InstagramPlugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.verso.cordova.clipboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/VersoSolutions/CordovaClipboard.git",
+            "subdir": "."
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }

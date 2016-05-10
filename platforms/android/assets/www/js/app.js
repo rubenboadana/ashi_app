@@ -16,6 +16,7 @@
     $urlRouterProvider.otherwise('/list');
   });
 
+
   var routes;
   var trainings_done = angular.fromJson(window.localStorage['done'] || '[]');
 
@@ -39,10 +40,18 @@
      
     function loadTrainnings() {
       var q = $q.defer();
-      $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=657156f6161cfe69143818fb3ebf645e676d317d &callback=JSON_CALLBACK').success(function (data) {
+      $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=4b1fc04359a9c23baeb573113cf37f27716cf153 &callback=JSON_CALLBACK').success(function (data) {
             for (var i = data.length - 1; i >= 0; i--) {
               data[i].distance = (Math.round((data[i].distance/1000)*10)/10).toFixed(1);
               data[i].elevation_gain = data[i].elevation_gain.toFixed(0);
+              if(isDone(data[i].id)){
+                data[i].thumbnail = "img/icono_ashi.png";
+
+              }else{
+                data[i].thumbnail = "img/icono_ashi_grey.png";
+
+              }
+              
             };
             q.resolve(data);
        }).error(function(){
@@ -58,7 +67,14 @@
             if(routeId == imageData.text){
                 alert('Entreno registrado!');
                 trainings_done.push(routeId);
-                persist();
+                loadTrainnings().then(function(data){
+                  $scope.routes = data;
+                  routes = $scope.routes;
+                  persist();
+                }).catch(function(){
+                  $scope.routes = angular.fromJson(window.localStorage['routes'] || '[]');
+                  routes = $scope.routes;
+                });
             }else{
                 alert('Entreno no encontrado');
             }
@@ -76,7 +92,7 @@
         routes = $scope.routes;
     });
 
-    $scope.isDone = function(routeId){
+    function isDone(routeId){
       if(trainings_done.indexOf(routeId) < 0){
         return false;
       }else{
@@ -215,12 +231,12 @@
             },
             "android":{
               "forceShow":true,
-              "sound":true
+              "sound":true,
             }
           }
       });
       push.register(function(token){
-        //alert("Device token:"+token);
+        alert("TOKEN: "+token);
         push.saveToken(token);
       });
 
