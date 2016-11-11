@@ -40,7 +40,7 @@
      
     function loadTrainnings() {
       var q = $q.defer();
-      $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=4b1fc04359a9c23baeb573113cf37f27716cf153 &callback=JSON_CALLBACK').success(function (data) {
+      $http.jsonp('https://www.strava.com/api/v3/athlete/routes?per_page=1&access_token=81fd9c9b9219bc4963f6f20237b3420bd07c6e78 &callback=JSON_CALLBACK').success(function (data) {
             for (var i = data.length - 1; i >= 0; i--) {
               data[i].distance = (Math.round((data[i].distance/1000)*10)/10).toFixed(1);
               data[i].elevation_gain = data[i].elevation_gain.toFixed(0);
@@ -236,7 +236,6 @@
           }
       });
       push.register(function(token){
-        alert("TOKEN: "+token);
         push.saveToken(token);
       });
 
